@@ -13,7 +13,7 @@ class MinkContext extends BaseMinkContext
      * Example: When I follow "Log In" inside "header"
      * Example: And I follow "Log In" inside "header"
      *
-     * @When /^(?:|I )follow "(?P<link>(?:[^"]|\\")*)" inside "(?P<containerk>(?:[^"]|\\")*)"$/
+     * @When /^(?:|I )follow "(?P<link>(?:[^"]|\\")*)" in the "(?P<containerk>(?:[^"]|\\")*)" element$/
      */
     public function clickLinkInside($link, $container)
     {
