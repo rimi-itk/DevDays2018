@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -x
+
+dir=$(cd $(dirname "${BASH_SOURCE[0]}")/../ && pwd)
+
+# java -jar selenium/selenium-server-standalone-2.53.1.jar \
+#			 -Dwebdriver.firefox.bin="$dir/firefox/48.0/Firefox.app/Contents/MacOS/firefox"
+
+
+# https://github.com/lmc-eu/steward/wiki/Selenium-server-&-browser-drivers
+
+java -Dwebdriver.chrome.driver="$dir/selenium/chromedriver" -jar selenium/selenium-server-standalone-3.11.0.jar

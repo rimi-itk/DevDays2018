@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+dir=$(cd $(dirname "${BASH_SOURCE[0]}")/../ && pwd)
+
+# https://github.com/rimi-itk/BackstopJS-examples/blob/master/SlimerJS.md
+
+version=48.0
+
+install_path=$dir/firefox/$version
+
+mkdir -p $install_path
+curl https://ftp.mozilla.org/pub/firefox/releases/$version/mac/en-US/Firefox%20$version.dmg > $install_path/Firefox.dmg
+hdiutil attach $install_path/Firefox.dmg
+cp -Rv /Volumes/Firefox/Firefox.app $install_path/
+hdiutil unmount /Volumes/Firefox
+rm $install_path/Firefox.dmg

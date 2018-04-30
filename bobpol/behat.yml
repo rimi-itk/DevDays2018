@@ -1,0 +1,36 @@
+default:
+    calls:
+        error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
+
+    suites:
+        default:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - behatch:context:browser
+                - behatch:context:debug
+                - behatch:context:system
+                - behatch:context:json
+                - behatch:context:table
+                - behatch:context:rest
+                - behatch:context:xml
+                # - behatch:browser
+                # - behatch:debug:
+                #     screenshotDir: "."
+                # - behatch:json:
+                #     evaluationMode: javascript
+                # - behatch:rest
+                # - behatch:system
+                # - behatch:table
+                # - behatch:xml
+
+    extensions:
+        Behat\MinkExtension:
+            # Use chrome webdriver
+            browser_name: chrome
+            default_session: selenium2
+            base_url: 'https://bobpol.aarhus.dk'
+            # javascript_session: selenium2
+            # goutte: ~
+            selenium2: ~
+            # wd_host: http://127.0.0.1:4444/wd/hub
+        Behatch\Extension: ~
