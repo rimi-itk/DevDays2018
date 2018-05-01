@@ -13,8 +13,8 @@ Feature: Dokk1
     When I fill in "Søg efter arrangement..." with "sprogcafe"
     And I press "Søg"
     Then I should be on "/det-sker/arrangementer?search=sprogcafe"
-    And I should see "Mandag, 30/4-2018"
-    # And I save a screenshot in "search.jpg"
+    And I should see "Mandag, 28/5-2018"
+    And I save a screenshot in "search.jpg"
 
   Scenario: Opening hours
     Given I am on "/"
