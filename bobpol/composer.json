@@ -10,7 +10,7 @@
 		"extra": {
 				"lbaey/chromedriver": {
 						"bypass-select": true,
-						"chromedriver-version": "2.33"
+						"chromedriver-version": "2.38"
 				}
 		},
 		"scripts": {

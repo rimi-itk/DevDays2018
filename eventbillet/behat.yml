@@ -1,0 +1,25 @@
+default:
+    calls:
+        error_reporting: 16383 # E_ALL & ~E_USER_DREPRECATED
+
+    suites:
+        default:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
+                - behatch:context:browser
+                - behatch:context:debug:
+                    screenshotDir: 'screenshots'
+
+    extensions:
+        Behat\MinkExtension:
+            # Use chrome webdriver
+            browser_name: chrome
+            default_session: selenium2
+            # base_url: '%env(BASE_URL)%'
+            base_url: 'https://de402756.ngrok.io'
+            # base_url: 'http://127.0.0.1:8000'
+            javascript_session: selenium2
+            # goutte: ~
+            selenium2: ~
+            show_cmd: 'open %s'
+        Behatch\Extension: ~
