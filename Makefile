@@ -10,4 +10,8 @@ start-test-server:
 	@echo "Open new shell and run `make run-tests`"
 
 run-tests:
-	$(THIS_DIR)/vendor/bin/behat
+	$(THIS_DIR)/vendor/bin/behat $(filter-out $@,$(MAKECMDGOALS))
+
+# https://stackoverflow.com/a/6273809/1826109
+%:
+	@:

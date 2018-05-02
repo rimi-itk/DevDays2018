@@ -8,29 +8,23 @@ default:
                 - Behat\MinkExtension\Context\MinkContext
                 - behatch:context:browser
                 - behatch:context:debug
-                - behatch:context:system
-                - behatch:context:json
-                - behatch:context:table
-                - behatch:context:rest
-                - behatch:context:xml
-                # - behatch:browser
-                # - behatch:debug:
-                #     screenshotDir: "."
-                # - behatch:json:
-                #     evaluationMode: javascript
-                # - behatch:rest
-                # - behatch:system
-                # - behatch:table
-                # - behatch:xml
+                - rpkamp\Behat\MailhogExtension\Context\MailhogContext
+                - ItkDev\Behat\Context\MailhogContext
+                - ItkDev\Behat\Context\MinkContext
 
     extensions:
         Behat\MinkExtension:
             # Use chrome webdriver
             browser_name: chrome
             default_session: selenium2
-            base_url: 'https://bobpol.aarhus.dk'
+            # base_url: 'https://bobpol.aarhus.dk'
+            base_url: 'http://bobpol.vm'
             # javascript_session: selenium2
             # goutte: ~
             selenium2: ~
             # wd_host: http://127.0.0.1:4444/wd/hub
+            show_cmd: 'open %s'
         Behatch\Extension: ~
+        rpkamp\Behat\MailhogExtension:
+            base_url: 'http://bobpol.vm:8025'
+            purge_tag: email # optional, defaults to 'email'
